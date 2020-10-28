@@ -28,21 +28,34 @@ The configuration details of each machine may be found below.
 
 
 +---------+---------------+------------+------------------+ 
-|   Name  |    Function   | IP Address | Operating System | 
+
+| Name  | Function  | IP Address  | Operating System  | 
+
 +---------+---------------+------------+------------------+ 
-| JumpBox |    Gateway    |  10.0.0.4  |       Linux      | 
+
+| JumpBox | Gateway  | 10.0.0.4 |  Linux  | 
+
 +---------+---------------+------------+------------------+	
+
 |   EPVM  |   ELK Server  |  10.1.0.4  |       Linux      |	
+
 +---------+---------------+------------+------------------+	
+
 |  Web-1  | Web Server #1 |  10.0.0.5  |       Linux      |	
+
 +---------+---------------+------------+------------------+	
+
 |  Web-2  | Web Server #2 |  10.0.0.6  |       Linux      |	
+
 +---------+---------------+------------+------------------+	
+
 |  Web-3  | Web Server #3 |  10.0.0.7  |       Linux      |	
+
 +---------+---------------+------------+------------------+	
 
  ### Access Policies
 The machines on the internal network are not exposed to the public Internet. 
+
 Only the JumpHost machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 - 72.219.85.153
 - 172.17.0.2
@@ -60,19 +73,31 @@ Machines within the network can only be accessed by SSH.  The only machine that 
 A summary of the access policies in place can be found in the table below.
 
 +----------+---------------------+----------------------+
+
 |   Name   | Publicly Accessible | Allowed IP Addresses |
+
 +----------+---------------------+----------------------+
+
 | JumpHost |         Yes         |     72.219.85.153    |
-|          |                     |      172.17.0.2      |
-|          |                     |       10.0.0.4       |
+
+| -------- |-------------        |      172.17.0.2      |
+
 +----------+---------------------+----------------------+
+
 |   EPVM   |          No         |       10.0.0.4       |
+
 +----------+---------------------+----------------------+
+
 |   Web-1  |          No         |       10.0.0.4       |
+
 +----------+---------------------+----------------------+
+
 |   Web-2  |          No         |       10.0.0.4       |
+
 +----------+---------------------+----------------------+
+
 |   Web-3  |          No         |       10.0.0.4       |
+
 +----------+---------------------+----------------------+
 
 ### Elk Configuration
