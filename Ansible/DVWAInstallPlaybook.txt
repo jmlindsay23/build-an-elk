@@ -1,0 +1,34 @@
+---
+  - name: My first playbook
+    hosts: webservers
+    become: true
+    tasks:
+
+    - name: Install docker.io (state=present is optional)
+      apt:
+        name: docker.io
+        update_cache: yes
+        state: present
+
+    - name: Install python3-pip (state=present is optional)
+      apt:
+        name: python3-pip
+        state: present
+
+    - name: Install docker using pip
+      pip:
+        name: docker
+        state: present
+
+    - name: Install DVWA
+      docker_container:
+        name: dvwa
+        image: cyberxsecurity/dvwa
+        restart_policy: always
+        published_ports: 80:80
+        state: started
+
+    - name: Enable docker service on restart
+      systemd:
+        name: docker
+        enabled: yes
